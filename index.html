@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobSphere - Find Your Dream Job</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-briefcase"></i>
+            JobSphere
+        </div>
+
+        <ul
+    class="nav-links"
+    id="navbarLinks"
+    >
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="jobs.html">
+                Jobs
+            </a>
+        </li>
+
+    </ul>
+
+        <button id="darkModeBtn">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Find Your Dream Job Today</h1>
+
+            <p>
+                Explore thousands of opportunities from top companies
+                across the globe.
+            </p>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="heroSearch"
+                    placeholder="Search Jobs..."
+                >
+
+                <button onclick="goToJobs()">
+                    Search
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Featured Jobs -->
+
+    <section class="featured">
+
+        <h2>Featured Jobs</h2>
+
+        <div class="featured-grid">
+
+            <div class="job-card">
+                <h3>Frontend Developer</h3>
+                <p>Google • Hyderabad</p>
+                <span>₹10 LPA</span>
+            </div>
+
+            <div class="job-card">
+                <h3>Backend Developer</h3>
+                <p>Microsoft • Bangalore</p>
+                <span>₹12 LPA</span>
+            </div>
+
+            <div class="job-card">
+                <h3>Full Stack Developer</h3>
+                <p>Amazon • Remote</p>
+                <span>₹15 LPA</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Top Companies -->
+
+    <section class="companies">
+
+        <h2>Top Companies Hiring</h2>
+
+        <div class="company-grid">
+
+            <div class="company">
+                Google
+            </div>
+
+            <div class="company">
+                Microsoft
+            </div>
+
+            <div class="company">
+                Amazon
+            </div>
+
+            <div class="company">
+                Netflix
+            </div>
+
+            <div class="company">
+                Adobe
+            </div>
+
+            <div class="company">
+                Oracle
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 JobSphere. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

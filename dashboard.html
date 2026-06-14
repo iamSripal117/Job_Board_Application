@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>User Dashboard | JobSphere</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/dashboard.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-briefcase"></i>
+
+            JobSphere
+
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="jobs.html">
+                    Jobs
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+        </ul>
+
+        <button id="darkModeBtn">
+
+            <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+    </nav>
+
+    <!-- HEADER -->
+
+    <section class="dashboard-header">
+
+        <h1>
+            Welcome Back 👋
+        </h1>
+
+        <p>
+            Track your job search progress
+        </p>
+
+    </section>
+
+    <!-- PROFILE CARD -->
+
+    <section class="profile-section">
+
+        <div class="profile-card">
+
+            <img
+                src="https://i.pravatar.cc/200"
+                alt="Profile"
+            >
+
+           <h2 id="userName">
+                User
+            </h2>
+
+            <p id="userEmail">
+                user@email.com
+            </p>
+
+            <button
+                onclick="logout()"
+                class="auth-btn"
+                style="margin-top:15px;"
+            >
+                Logout
+            </button>
+
+            <div class="profile-progress">
+
+                <div
+                    class="progress-bar"
+                    id="profileProgressBar"
+                ></div>
+
+            </div>
+
+            <span id="profilePercentage">
+
+                0%
+
+            </span>
+
+        </div>
+
+    </section>
+
+    <!-- STATS -->
+
+    <section class="stats-section">
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-file-circle-check"></i>
+
+            <h2 id="applicationsCount">
+                0
+            </h2>
+
+            <p>
+                Applications
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-bookmark"></i>
+
+            <h2 id="savedJobsCount">
+                0
+            </h2>
+
+            <p>
+                Saved Jobs
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-eye"></i>
+
+            <h2 id="recentJobsCount">
+                0
+            </h2>
+
+            <p>
+                Recently Viewed
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-user-check"></i>
+
+            <h2 id="profileCompletion">
+                0%
+            </h2>
+
+            <p>
+                Profile Completion
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- DASHBOARD GRID -->
+
+    <section class="dashboard-grid">
+
+        <!-- SAVED JOBS -->
+
+        <div class="dashboard-card">
+
+            <div class="card-header">
+
+                <h2>
+                    Saved Jobs
+                </h2>
+
+            </div>
+
+            <div id="savedJobsList">
+
+            </div>
+
+        </div>
+
+        <!-- APPLICATION HISTORY -->
+
+        <div class="dashboard-card">
+
+            <div class="card-header">
+
+                <h2>
+                    Application History
+                </h2>
+
+            </div>
+
+            <div id="applicationsList">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RECENTLY VIEWED -->
+
+    <section class="dashboard-section">
+
+        <div class="dashboard-card">
+
+            <div class="card-header">
+
+                <h2>
+                    Recently Viewed Jobs
+                </h2>
+
+            </div>
+
+            <div id="recentJobsList">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RECOMMENDED JOBS -->
+
+    <section class="dashboard-section">
+
+        <div class="dashboard-card">
+
+            <div class="card-header">
+
+                <h2>
+                    Recommended Jobs
+                </h2>
+
+            </div>
+
+            <div id="recommendedJobs">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RESUME UPLOAD -->
+
+    <section class="dashboard-section">
+
+        <div class="dashboard-card">
+
+            <div class="card-header">
+
+                <h2>
+                    Resume Upload
+                </h2>
+
+            </div>
+
+            <input
+                type="file"
+                id="resumeUpload"
+            >
+
+            <p
+                id="resumeName"
+                style="margin-top:15px;"
+            >
+                No Resume Uploaded
+            </p>
+
+        </div>
+
+    </section>
+    <section class="dashboard-section">
+
+    <div class="dashboard-card">
+
+        <div class="card-header">
+            <h2>Manage Data</h2>
+        </div>
+
+        <div class="action-buttons">
+
+            <button
+                id="clearSavedJobsBtn"
+                class="danger-btn"
+            >
+                Clear Saved Jobs
+            </button>
+
+            <button
+                id="clearApplicationsBtn"
+                class="danger-btn"
+            >
+                Clear Applications
+            </button>
+
+            <button
+                id="clearRecentJobsBtn"
+                class="danger-btn"
+            >
+                Clear Recently Viewed
+            </button>
+
+            <button
+                id="clearResumeBtn"
+                class="danger-btn"
+            >
+                Remove Resume
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <footer>
+
+        <p>
+            © 2026 JobSphere
+        </p>
+
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

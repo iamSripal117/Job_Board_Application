@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details | JobSphere</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-briefcase"></i>
+            JobSphere
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+
+        <button id="darkModeBtn">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+    </nav>
+
+    <!-- =========================
+         JOB DETAILS SECTION
+    ========================== -->
+
+    <section class="job-details">
+
+        <div id="jobDetailsContainer">
+
+            <!-- Dynamic Content -->
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+        <p>
+            © 2026 JobSphere. All Rights Reserved.
+        </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+    <script>
+
+        let allJobs = [];
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            loadJobDetails
+        );
+
+        async function loadJobDetails() {
+
+            try {
+
+                const response =
+                    await fetch("data/jobs.json");
+
+                allJobs =
+                    await response.json();
+
+                const selectedJobId =
+                    localStorage.getItem(
+                        "selectedJob"
+                    );
+
+                if (!selectedJobId) {
+
+                    window.location.href =
+                        "jobs.html";
+
+                    return;
+                }
+
+                const job =
+                    allJobs.find(
+                        item =>
+                        Number(item.id) ===
+                        Number(selectedJobId)
+                    );
+
+                if (!job) {
+
+                    document
+                        .getElementById(
+                            "jobDetailsContainer"
+                        )
+                        .innerHTML =
+                        `
+                        <h2>
+                            Job not found
+                        </h2>
+                    `;
+
+                    return;
+                }
+
+                addRecentlyViewed(
+                    Number(job.id)
+                );
+
+                renderJob(job);
+
+            }
+
+            catch (error) {
+
+                console.error(error);
+
+                document
+                    .getElementById(
+                        "jobDetailsContainer"
+                    )
+                    .innerHTML =
+                    `
+                    <h2>
+                        Error loading job
+                    </h2>
+                `;
+            }
+        }
+
+        function renderJob(job) {
+
+            const container =
+                document.getElementById(
+                    "jobDetailsContainer"
+                );
+
+            const skillsHtml =
+                job.skills
+                .map(skill => `
+                    <span>
+                        ${skill}
+                    </span>
+                `)
+                .join("");
+
+            container.innerHTML = `
+
+            <div class="details-card">
+
+                <h1>
+                    ${job.title}
+                </h1>
+
+                <h3>
+                    ${job.company}
+                </h3>
+
+                <div class="tags">
+
+                    <span>
+                        ${job.location}
+                    </span>
+
+                    <span>
+                        ${job.type}
+                    </span>
+
+                    <span>
+                        ${job.experience}
+                    </span>
+
+                </div>
+
+                <div
+                    class="salary"
+                    style="margin-top:20px;"
+                >
+                    ${job.salary}
+                </div>
+
+                <h3>
+                    Job Description
+                </h3>
+
+                <p>
+                    ${job.description}
+                </p>
+
+                <h3>
+                    Required Skills
+                </h3>
+
+                <div class="tags">
+                    ${skillsHtml}
+                </div>
+
+                <h3>
+                    Responsibilities
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Develop high-quality software solutions.
+                    </li>
+
+                    <li>
+                        Collaborate with cross-functional teams.
+                    </li>
+
+                    <li>
+                        Participate in design and code reviews.
+                    </li>
+
+                    <li>
+                        Write clean and maintainable code.
+                    </li>
+
+                    <li>
+                        Follow industry best practices.
+                    </li>
+
+                </ul>
+
+                <div
+                    style="
+                    display:flex;
+                    gap:15px;
+                    flex-wrap:wrap;
+                    margin-top:30px;"
+                >
+
+                    <button
+                        class="apply-btn"
+                        onclick="applyJob(${job.id})"
+                    >
+                        Apply Now
+                    </button>
+
+                    <button
+                        class="apply-btn"
+                        onclick="saveJob(${job.id})"
+                    >
+                        Save Job
+                    </button>
+
+                    <button
+                        class="apply-btn"
+                        onclick="goBack()"
+                    >
+                        Back To Jobs
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div
+                id="similarJobs"
+                style="
+                margin-top:50px;"
+            >
+
+            </div>
+
+            `;
+
+            renderSimilarJobs(job);
+        }
+
+        function renderSimilarJobs(currentJob) {
+
+            const similarJobs =
+                allJobs
+                .filter(
+                    job =>
+                    job.id !== currentJob.id
+                )
+                .slice(0, 3);
+
+            let html = `
+
+            <h2
+                style="
+                text-align:center;
+                margin-bottom:30px;"
+            >
+                Similar Jobs
+            </h2>
+
+            <div class="jobs-container">
+
+            `;
+
+            similarJobs.forEach(job => {
+
+                html += `
+
+                <div class="job-card">
+
+                    <h3>
+                        ${job.title}
+                    </h3>
+
+                    <p>
+                        ${job.company}
+                    </p>
+
+                    <div class="tags">
+
+                        <span>
+                            ${job.location}
+                        </span>
+
+                        <span>
+                            ${job.type}
+                        </span>
+
+                    </div>
+
+                    <div class="salary">
+                        ${job.salary}
+                    </div>
+
+                    <div
+                        class="job-actions"
+                        style="
+                        margin-top:15px;"
+                    >
+
+                        <button
+                            class="apply-btn"
+                            onclick="openSimilarJob(${job.id})"
+                        >
+                            View
+                        </button>
+
+                    </div>
+
+                </div>
+
+                `;
+            });
+
+            html += `</div>`;
+
+            document
+                .getElementById(
+                    "similarJobs"
+                )
+                .innerHTML = html;
+        }
+
+        function openSimilarJob(id) {
+
+            localStorage.setItem(
+                "selectedJob",
+                id
+            );
+
+            location.reload();
+        }
+
+        function addRecentlyViewed(jobId) {
+
+            let recentJobs =
+                JSON.parse(
+                    localStorage.getItem(
+                        "recentJobs"
+                    )
+                ) || [];
+
+            recentJobs =
+                recentJobs.filter(
+                    id => id !== jobId
+                );
+
+            recentJobs.unshift(jobId);
+
+            recentJobs =
+                recentJobs.slice(0, 5);
+
+            localStorage.setItem(
+                "recentJobs",
+                JSON.stringify(
+                    recentJobs
+                )
+            );
+        }
+
+        function goBack() {
+
+            window.location.href =
+                "jobs.html";
+        }
+
+    </script>
+
+</body>
+
+</html>

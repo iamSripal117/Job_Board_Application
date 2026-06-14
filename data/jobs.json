@@ -1,0 +1,233 @@
+[
+  {
+    "id": 1,
+    "title": "Frontend Developer",
+    "company": "Google",
+    "location": "Hyderabad",
+    "salary": "10-15 LPA",
+    "type": "Full Time",
+    "experience": "2 Years",
+    "skills": ["HTML", "CSS", "JavaScript", "React"],
+    "description": "Develop and maintain responsive user interfaces using modern frontend technologies."
+  },
+  {
+    "id": 2,
+    "title": "Backend Developer",
+    "company": "Microsoft",
+    "location": "Bangalore",
+    "salary": "12-18 LPA",
+    "type": "Full Time",
+    "experience": "3 Years",
+    "skills": ["Node.js", "Express", "MongoDB"],
+    "description": "Build scalable APIs and backend services for enterprise applications."
+  },
+  {
+    "id": 3,
+    "title": "Full Stack Developer",
+    "company": "Amazon",
+    "location": "Remote",
+    "salary": "15-22 LPA",
+    "type": "Full Time",
+    "experience": "2 Years",
+    "skills": ["React", "Node.js", "MySQL"],
+    "description": "Work on both frontend and backend systems for cloud-based applications."
+  },
+  {
+    "id": 4,
+    "title": "UI/UX Designer",
+    "company": "Adobe",
+    "location": "Hyderabad",
+    "salary": "8-12 LPA",
+    "type": "Full Time",
+    "experience": "1 Year",
+    "skills": ["Figma", "Adobe XD", "Prototyping"],
+    "description": "Design intuitive and visually appealing interfaces for web applications."
+  },
+  {
+    "id": 5,
+    "title": "Java Developer",
+    "company": "Oracle",
+    "location": "Bangalore",
+    "salary": "10-16 LPA",
+    "type": "Full Time",
+    "experience": "2 Years",
+    "skills": ["Java", "Spring Boot", "MySQL"],
+    "description": "Develop enterprise-grade Java applications and REST APIs."
+  },
+  {
+    "id": 6,
+    "title": "Python Developer",
+    "company": "Infosys",
+    "location": "Chennai",
+    "salary": "8-14 LPA",
+    "type": "Full Time",
+    "experience": "1 Year",
+    "skills": ["Python", "Flask", "PostgreSQL"],
+    "description": "Build backend applications and automation solutions using Python."
+  },
+  {
+    "id": 7,
+    "title": "Data Analyst",
+    "company": "Accenture",
+    "location": "Pune",
+    "salary": "7-11 LPA",
+    "type": "Full Time",
+    "experience": "1 Year",
+    "skills": ["SQL", "Power BI", "Excel"],
+    "description": "Analyze business data and generate actionable insights."
+  },
+  {
+    "id": 8,
+    "title": "Machine Learning Engineer",
+    "company": "TCS",
+    "location": "Hyderabad",
+    "salary": "12-20 LPA",
+    "type": "Full Time",
+    "experience": "3 Years",
+    "skills": ["Python", "TensorFlow", "PyTorch"],
+    "description": "Design and deploy machine learning models for real-world problems."
+  },
+  {
+    "id": 9,
+    "title": "DevOps Engineer",
+    "company": "Wipro",
+    "location": "Bangalore",
+    "salary": "11-18 LPA",
+    "type": "Full Time",
+    "experience": "2 Years",
+    "skills": ["Docker", "Kubernetes", "AWS"],
+    "description": "Manage CI/CD pipelines and cloud infrastructure."
+  },
+  {
+    "id": 10,
+    "title": "Cyber Security Analyst",
+    "company": "IBM",
+    "location": "Remote",
+    "salary": "10-17 LPA",
+    "type": "Full Time",
+    "experience": "2 Years",
+    "skills": ["Network Security", "SIEM", "Penetration Testing"],
+    "description": "Monitor and protect organizational systems from cyber threats."
+  },
+  {
+    "id": 11,
+    "title": "Cloud Engineer",
+    "company": "Capgemini",
+    "location": "Mumbai",
+    "salary": "10-16 LPA",
+    "type": "Full Time",
+    "experience": "2 Years",
+    "skills": ["AWS", "Azure", "Linux"],
+    "description": "Design and manage cloud infrastructure solutions."
+  },
+  {
+    "id": 12,
+    "title": "QA Automation Engineer",
+    "company": "Cognizant",
+    "location": "Chennai",
+    "salary": "8-13 LPA",
+    "type": "Full Time",
+    "experience": "1 Year",
+    "skills": ["Selenium", "Java", "TestNG"],
+    "description": "Develop automated testing frameworks and ensure software quality."
+  },
+  {
+    "id": 13,
+    "title": "React Developer",
+    "company": "Zoho",
+    "location": "Chennai",
+    "salary": "9-14 LPA",
+    "type": "Full Time",
+    "experience": "1 Year",
+    "skills": ["React", "Redux", "JavaScript"],
+    "description": "Build modern and interactive frontend applications."
+  },
+  {
+    "id": 14,
+    "title": "Software Engineer",
+    "company": "HCL Technologies",
+    "location": "Noida",
+    "salary": "7-12 LPA",
+    "type": "Full Time",
+    "experience": "Fresher",
+    "skills": ["Java", "DSA", "SQL"],
+    "description": "Develop software solutions and participate in product development."
+  },
+  {
+    "id": 15,
+    "title": "AI Engineer",
+    "company": "OpenAI Labs",
+    "location": "Remote",
+    "salary": "18-30 LPA",
+    "type": "Full Time",
+    "experience": "3 Years",
+    "skills": ["LLMs", "Python", "Deep Learning"],
+    "description": "Develop and optimize AI-powered applications and systems."
+  },
+  {
+    "id": 16,
+    "title": "Business Analyst",
+    "company": "Deloitte",
+    "location": "Hyderabad",
+    "salary": "8-12 LPA",
+    "type": "Full Time",
+    "experience": "1 Year",
+    "skills": ["SQL", "Excel", "Communication"],
+    "description": "Bridge business requirements and technical implementation."
+  },
+  {
+    "id": 17,
+    "title": "Android Developer",
+    "company": "Flipkart",
+    "location": "Bangalore",
+    "salary": "10-16 LPA",
+    "type": "Full Time",
+    "experience": "2 Years",
+    "skills": ["Kotlin", "Android Studio", "Firebase"],
+    "description": "Develop and maintain Android applications with modern architecture."
+  },
+  {
+    "id": 18,
+    "title": "Software Intern",
+    "company": "Paytm",
+    "location": "Noida",
+    "salary": "4-6 LPA",
+    "type": "Internship",
+    "experience": "Fresher",
+    "skills": ["Java", "JavaScript", "SQL"],
+    "description": "Assist development teams in building and testing software products."
+  },
+  {
+    "id": 19,
+    "title": "Data Scientist",
+    "company": "Swiggy",
+    "location": "Bangalore",
+    "salary": "14-22 LPA",
+    "type": "Full Time",
+    "experience": "3 Years",
+    "skills": ["Python", "Machine Learning", "Statistics"],
+    "description": "Analyze large datasets and build predictive models."
+  },
+  {
+    "id": 20,
+    "title": "Junior Full Stack Developer",
+    "company": "Startup Hub",
+    "location": "Remote",
+    "salary": "6-10 LPA",
+    "type": "Full Time",
+    "experience": "Fresher",
+    "skills": ["HTML", "CSS", "JavaScript", "Node.js"],
+    "description": "Work across frontend and backend development in a fast-paced startup environment."
+  },
+  {
+    "id": 21,
+    "title": "Data Analyst",
+    "company": "Elevate Labs",
+    "location": "Hyderabad",
+    "salary": "15000",
+    "type": "internship",
+    "experience": "Fresher",
+    "skills": ["SQL", "Excel", "Pandas", "Power BI"],
+    "description": "Looking for fresher data analyst who is proficient in analyzing data and handling missing values in sheets."
+  }
+]

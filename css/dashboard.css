@@ -1,0 +1,481 @@
+/* =====================================
+   DASHBOARD HEADER
+===================================== */
+
+.dashboard-header{
+    padding:60px 8%;
+    text-align:center;
+
+    background:linear-gradient(
+        135deg,
+        #6366f1,
+        #8b5cf6
+    );
+
+    color:white;
+}
+
+.dashboard-header h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.dashboard-header p{
+    opacity:.9;
+    font-size:1.1rem;
+}
+
+/* =====================================
+   PROFILE SECTION
+===================================== */
+
+.profile-section{
+    padding:40px 8%;
+}
+
+.profile-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    padding:30px;
+
+    text-align:center;
+
+    max-width:400px;
+
+    margin:auto;
+
+    transition:.3s;
+}
+
+.profile-card:hover{
+    transform:translateY(-5px);
+}
+
+.profile-card img{
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin-bottom:20px;
+
+    border:4px solid #6366f1;
+}
+
+.profile-card h2{
+    margin-bottom:10px;
+}
+
+.profile-card p{
+    color:var(--gray);
+}
+
+/* =====================================
+   PROFILE COMPLETION BAR
+===================================== */
+
+.profile-progress{
+
+    width:100%;
+
+    height:12px;
+
+    background:#e5e7eb;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-top:20px;
+}
+
+.progress-bar{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        135deg,
+        #10b981,
+        #22c55e
+    );
+
+    transition:1s ease;
+}
+
+#profilePercentage{
+
+    display:block;
+
+    margin-top:10px;
+
+    font-weight:600;
+}
+
+/* =====================================
+   STATS SECTION
+===================================== */
+
+.stats-section{
+
+    padding:50px 8%;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+}
+
+.stat-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-8px);
+}
+
+.stat-card i{
+
+    font-size:2rem;
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+}
+
+.stat-card h2{
+    margin-bottom:8px;
+}
+
+.stat-card p{
+    color:var(--gray);
+}
+
+/* =====================================
+   DASHBOARD GRID
+===================================== */
+
+.dashboard-grid{
+
+    padding:0 8%;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+}
+
+/* =====================================
+   DASHBOARD SECTION
+===================================== */
+
+.dashboard-section{
+    padding:0 8%;
+}
+
+/* =====================================
+   DASHBOARD CARD
+===================================== */
+
+.dashboard-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:30px;
+
+    box-shadow:var(--shadow);
+}
+
+.card-header{
+
+    border-bottom:1px solid #e5e7eb;
+
+    padding-bottom:10px;
+
+    margin-bottom:20px;
+}
+
+.card-header h2{
+    font-size:1.3rem;
+}
+
+/* =====================================
+   JOB ITEMS
+===================================== */
+
+.saved-job-item,
+.application-item,
+.recent-job-item,
+.recommended-job-item{
+
+    background:#f8fafc;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    margin-bottom:15px;
+
+    border-left:4px solid var(--primary);
+
+    transition:.3s;
+}
+
+.saved-job-item:hover,
+.application-item:hover,
+.recent-job-item:hover,
+.recommended-job-item:hover{
+
+    transform:translateX(5px);
+}
+
+.saved-job-item h4,
+.application-item h4,
+.recent-job-item h4,
+.recommended-job-item h4{
+
+    margin-bottom:5px;
+}
+
+.saved-job-item p,
+.application-item p,
+.recent-job-item p,
+.recommended-job-item p{
+
+    color:var(--gray);
+
+    font-size:.9rem;
+}
+
+/* =====================================
+   RECOMMENDED JOBS
+===================================== */
+
+#recommendedJobs{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:15px;
+}
+
+/* =====================================
+   RESUME SECTION
+===================================== */
+
+#resumeUpload{
+
+    width:100%;
+
+    padding:15px;
+
+    border:2px dashed #6366f1;
+
+    border-radius:15px;
+
+    background:#f8fafc;
+
+    cursor:pointer;
+}
+
+#resumeName{
+
+    color:var(--gray);
+
+    font-size:.95rem;
+
+    font-weight:500;
+}
+
+/* =====================================
+   EMPTY STATE
+===================================== */
+
+.empty-state{
+
+    text-align:center;
+
+    padding:25px;
+
+    color:var(--gray);
+}
+
+/* =====================================
+   DARK MODE
+===================================== */
+
+body.dark .profile-card,
+body.dark .stat-card,
+body.dark .dashboard-card{
+
+    background:#1e293b;
+
+    color:white;
+}
+
+body.dark .saved-job-item,
+body.dark .application-item,
+body.dark .recent-job-item,
+body.dark .recommended-job-item{
+
+    background:#334155;
+}
+
+body.dark .saved-job-item p,
+body.dark .application-item p,
+body.dark .recent-job-item p,
+body.dark .recommended-job-item p{
+
+    color:#cbd5e1;
+}
+
+body.dark .card-header{
+
+    border-color:#475569;
+}
+
+body.dark #resumeUpload{
+
+    background:#334155;
+
+    color:white;
+
+    border-color:#8b5cf6;
+}
+
+body.dark .profile-progress{
+
+    background:#475569;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:992px){
+
+    .dashboard-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .dashboard-header h1{
+
+        font-size:2.3rem;
+    }
+}
+
+@media(max-width:768px){
+
+    .stats-section,
+    .dashboard-grid,
+    .dashboard-section,
+    .profile-section{
+
+        padding-left:5%;
+        padding-right:5%;
+    }
+
+    .dashboard-header{
+
+        padding:50px 5%;
+    }
+
+    .dashboard-header h1{
+
+        font-size:2rem;
+    }
+
+    .profile-card{
+
+        max-width:100%;
+    }
+}
+
+@media(max-width:480px){
+
+    .dashboard-header h1{
+
+        font-size:1.8rem;
+    }
+
+    .profile-card img{
+
+        width:100px;
+        height:100px;
+    }
+
+    .dashboard-card{
+
+        padding:18px;
+    }
+
+    .stat-card{
+
+        padding:20px;
+    }
+}
+
+.action-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+.danger-btn{
+
+    border:none;
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:#ef4444;
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.danger-btn:hover{
+
+    transform:translateY(-3px);
+}
