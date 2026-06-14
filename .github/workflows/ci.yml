@@ -1,0 +1,42 @@
+name: JobSphere CI
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+
+  validate:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Verify Index Page
+        run: test -f index.html
+
+      - name: Verify Jobs Page
+        run: test -f jobs.html
+
+      - name: Verify Dashboard Page
+        run: test -f dashboard.html
+
+      - name: Verify CSS Folder
+        run: test -d css
+
+      - name: Verify JS Folder
+        run: test -d js
+
+      - name: Verify JSON Data
+        run: test -f data/jobs.json
+
+      - name: Success
+        run: echo "CI Passed Successfully"
